@@ -1,25 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="270.0" spacing="5.0" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <StackPane prefHeight="150.0" prefWidth="200.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c8e4ff" height="100.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c8e4ff"  height="100.0" stroke="#adb2bc" strokeType="INSIDE" strokeWidth="2.0" width="230.0">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></Rectangle>
+            <Text fx:id="output" />
          </children>
       </StackPane>
-      <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="15" />
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="8" />
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="9" />
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="/" />
+            <Button mnemonicParsing="false" onAction="#pressedNum" prefHeight="50.0" prefWidth="50.0" text="7">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button mnemonicParsing="false" onAction="#pressedNum" prefHeight="50.0" prefWidth="50.0" text="8">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button mnemonicParsing="false" onAction="#pressedNum" prefHeight="50.0" prefWidth="50.0" text="9">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button mnemonicParsing="false" onAction="#pressedOperator" prefHeight="50.0" prefWidth="50.0" text="/">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+      </HBox>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#pressedNum" prefHeight="50.0" prefWidth="50.0" text="4">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button mnemonicParsing="false" onAction="#pressedNum" prefHeight="50.0" prefWidth="50.0" text="5">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button mnemonicParsing="false" onAction="#pressedNum" prefHeight="50.0" prefWidth="50.0" text="6">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button mnemonicParsing="false" onAction="#pressedOperator" prefHeight="50.0" prefWidth="50.0" text="*">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+      </HBox>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#pressedNum" prefHeight="50.0" prefWidth="50.0" text="1">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button mnemonicParsing="false" onAction="#pressedNum" prefHeight="50.0" prefWidth="50.0" text="2">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button mnemonicParsing="false" onAction="#pressedNum" prefHeight="50.0" prefWidth="50.0" text="3">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button mnemonicParsing="false" onAction="#pressedOperator" prefHeight="50.0" prefWidth="50.0" text="-">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+      </HBox>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#pressedOperator" prefHeight="50.0" prefWidth="50.0" text="C">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button mnemonicParsing="false" onAction="#pressedNum" prefHeight="50.0" prefWidth="50.0" text="0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button mnemonicParsing="false" onAction="#pressedOperator" prefHeight="50.0" prefWidth="50.0" text="=">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button mnemonicParsing="false" onAction="#pressedOperator" prefHeight="50.0" prefWidth="50.0" text="+">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
       </HBox>
    </children>
+   <padding>
+      <Insets bottom="10.0" top="10.0" />
+   </padding>
 </VBox>

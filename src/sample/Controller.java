@@ -20,7 +20,7 @@ public class Controller {
     private void pressedNum(ActionEvent event){
         if(!start){
             output.setText("");
-            start = false;
+            start = true;
         } else {
             String value = ((Button)event.getSource()).getText();
             output.setText(output.getText() + value);
@@ -28,23 +28,28 @@ public class Controller {
     }
 
     @FXML
-    private void pressedOperator(ActionEvent event){
-        String value = ((Button)event.getSource()).getText();
-        if(!"=".equals(value)){
-            if(!operator.isEmpty()){
-                output.setText(String.valueOf(model.calculation(firstNum, Double.parseDouble(output.getText()), operator)));
-                start = true;
-            }
-            operator = value;
-            firstNum = Double.parseDouble(output.getText());
-            output.setText("");
-        } else {
-            if(operator.isEmpty()){
-                return;
-            }
-            output.setText(String.valueOf(model.calculation(firstNum, Double.parseDouble(output.getText()), operator)));
-            operator = "";
-            start = true;
-        }
+    private void pressedOperator(ActionEvent event) {
+      // try {
+           String value = ((Button) event.getSource()).getText();
+           if (!"=".equals(value)) {
+               if (!operator.isEmpty()) {
+                   output.setText(String.valueOf(model.calculation(firstNum, Double.parseDouble(output.getText()), operator)));
+                   start = true;
+               }
+               operator = value;
+               firstNum = Double.parseDouble(output.getText());
+               output.setText("");
+           } else {
+               if (operator.isEmpty()) {
+                   return;
+               }
+               output.setText(String.valueOf(model.calculation(firstNum, Double.parseDouble(output.getText()), operator)));
+               operator = "";
+               start = true;
+           }
+       //} catch (NumberFormatException e){
+       //    output.setText("ERROR");
+       //    start = false;
+       //}
     }
 }

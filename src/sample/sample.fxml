@@ -13,7 +13,7 @@
    <children>
       <StackPane prefHeight="150.0" prefWidth="200.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c8e4ff"  height="100.0" stroke="#adb2bc" strokeType="INSIDE" strokeWidth="2.0" width="230.0">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c8e4ff" height="100.0" stroke="#adb2bc" strokeType="INSIDE" strokeWidth="2.0" width="230.0">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor></Rectangle>
@@ -82,7 +82,7 @@
       </HBox>
       <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#pressedOperator" prefHeight="50.0" prefWidth="50.0" text="C">
+            <Button mnemonicParsing="false" onAction="#pressedNum" prefHeight="50.0" prefWidth="50.0" text=".">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>

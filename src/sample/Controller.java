@@ -15,41 +15,36 @@ public class Controller {
 
     private boolean start = true;
 
-
     @FXML
     private void pressedNum(ActionEvent event){
-        if(!start){
+        if (!start){
             output.setText("");
             start = true;
-        } else {
-            String value = ((Button)event.getSource()).getText();
-            output.setText(output.getText() + value);
         }
+        String value = ((Button)event.getSource()).getText();
+        output.setText(output.getText() + value);
     }
 
     @FXML
     private void pressedOperator(ActionEvent event) {
-      // try {
+       try {
            String value = ((Button) event.getSource()).getText();
            if (!"=".equals(value)) {
-               if (!operator.isEmpty()) {
-                   output.setText(String.valueOf(model.calculation(firstNum, Double.parseDouble(output.getText()), operator)));
-                   start = true;
-               }
+               calc();
                operator = value;
                firstNum = Double.parseDouble(output.getText());
                output.setText("");
            } else {
-               if (operator.isEmpty()) {
-                   return;
-               }
-               output.setText(String.valueOf(model.calculation(firstNum, Double.parseDouble(output.getText()), operator)));
+               calc();
                operator = "";
-               start = true;
            }
-       //} catch (NumberFormatException e){
-       //    output.setText("ERROR");
-       //    start = false;
-       //}
+       } catch (NumberFormatException e){
+           output.setText("ERROR");
+           operator = "";
+       }
+    }
+
+    private void calc(){
+        output.setText(String.valueOf(model.calculation(firstNum, Double.parseDouble(output.getText()), operator)));
     }
 }
